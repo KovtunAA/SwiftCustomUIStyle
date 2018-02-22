@@ -6,10 +6,25 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		048C2978203EC01300330952 /* UniversalSwiftCustomUIStyle */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 048C2979203EC01300330952 /* Build configuration list for PBXAggregateTarget "UniversalSwiftCustomUIStyle" */;
+			buildPhases = (
+				048C297C203EC03200330952 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UniversalSwiftCustomUIStyle;
+			productName = UniversalSwiftCustomUIStyle;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		048C2966203EBCCA00330952 /* SwiftCustomUIStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C295C203EBCCA00330952 /* SwiftCustomUIStyle.framework */; };
 		048C296B203EBCCA00330952 /* SwiftCustomUIStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */; };
 		048C296D203EBCCA00330952 /* SwiftCustomUIStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		048C2977203EBF3D00330952 /* SwiftCustomUIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +44,7 @@
 		048C2965203EBCCA00330952 /* SwiftCustomUIStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCustomUIStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCustomUIStyleTests.swift; sourceTree = "<group>"; };
 		048C296C203EBCCA00330952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCustomUIStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +89,7 @@
 			children = (
 				048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */,
 				048C2960203EBCCA00330952 /* Info.plist */,
+				048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */,
 			);
 			path = SwiftCustomUIStyle;
 			sourceTree = "<group>";
@@ -148,9 +165,14 @@
 				TargetAttributes = {
 					048C295B203EBCCA00330952 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					048C2964203EBCCA00330952 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					048C2978203EC01300330952 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -170,6 +192,7 @@
 			targets = (
 				048C295B203EBCCA00330952 /* SwiftCustomUIStyle */,
 				048C2964203EBCCA00330952 /* SwiftCustomUIStyleTests */,
+				048C2978203EC01300330952 /* UniversalSwiftCustomUIStyle */,
 			);
 		};
 /* End PBXProject section */
@@ -191,11 +214,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		048C297C203EC03200330952 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"SwiftCustomUIStyle\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"SwiftCustomUIStyle\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/SwiftCustomUIStyle.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/SwiftCustomUIStyle.framework/Modules/SwiftCustomUIStyle.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/SwiftCustomUIStyle.framework/Modules/SwiftCustomUIStyle.swiftmodule\"\nfi\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/SwiftCustomUIStyle.framework/SwiftCustomUIStyle\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/SwiftCustomUIStyle.framework/SwiftCustomUIStyle\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/SwiftCustomUIStyle.framework/SwiftCustomUIStyle\"\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/SwiftCustomUIStyle.framework\" \"${PROJECT_DIR}\"\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		048C2957203EBCCA00330952 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048C2977203EBF3D00330952 /* SwiftCustomUIStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +374,7 @@
 		048C2971203EBCCA00330952 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.attractgroup.SwiftCustomUIStyle;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +397,7 @@
 		048C2972203EBCCA00330952 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +419,7 @@
 		048C2974203EBCCA00330952 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69S8C392XU;
 				INFOPLIST_FILE = SwiftCustomUIStyleTests/Info.plist;
@@ -390,6 +434,7 @@
 		048C2975203EBCCA00330952 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69S8C392XU;
 				INFOPLIST_FILE = SwiftCustomUIStyleTests/Info.plist;
@@ -398,6 +443,24 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		048C297A203EC01300330952 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69S8C392XU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		048C297B203EC01300330952 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69S8C392XU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -427,6 +490,15 @@
 			buildConfigurations = (
 				048C2974203EBCCA00330952 /* Debug */,
 				048C2975203EBCCA00330952 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		048C2979203EC01300330952 /* Build configuration list for PBXAggregateTarget "UniversalSwiftCustomUIStyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048C297A203EC01300330952 /* Debug */,
+				048C297B203EC01300330952 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
