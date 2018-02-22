@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class SwiftCustomUIStyle: NSObject {
+public class SwiftCustomUIStyle: NSObject {
     public static let shared = SwiftCustomUIStyle()
     
     open func hello(){
