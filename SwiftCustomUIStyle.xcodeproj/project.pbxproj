@@ -25,6 +25,7 @@
 		048C296B203EBCCA00330952 /* SwiftCustomUIStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */; };
 		048C296D203EBCCA00330952 /* SwiftCustomUIStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		048C2977203EBF3D00330952 /* SwiftCustomUIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */; };
+		048C297E203ED5F800330952 /* SwiftCustomUIStyle.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 048C297D203ED5F800330952 /* SwiftCustomUIStyle.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCustomUIStyleTests.swift; sourceTree = "<group>"; };
 		048C296C203EBCCA00330952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCustomUIStyle.swift; sourceTree = "<group>"; };
+		048C297D203ED5F800330952 /* SwiftCustomUIStyle.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftCustomUIStyle.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		048C295E203EBCCA00330952 /* SwiftCustomUIStyle */ = {
 			isa = PBXGroup;
 			children = (
+				048C297D203ED5F800330952 /* SwiftCustomUIStyle.podspec */,
 				048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */,
 				048C2960203EBCCA00330952 /* Info.plist */,
 				048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */,
@@ -202,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048C297E203ED5F800330952 /* SwiftCustomUIStyle.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
