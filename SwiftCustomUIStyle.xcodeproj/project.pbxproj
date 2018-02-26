@@ -25,7 +25,8 @@
 		048C296B203EBCCA00330952 /* SwiftCustomUIStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */; };
 		048C296D203EBCCA00330952 /* SwiftCustomUIStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		048C2977203EBF3D00330952 /* SwiftCustomUIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */; };
-		048C297E203ED5F800330952 /* SwiftCustomUIStyle.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 048C297D203ED5F800330952 /* SwiftCustomUIStyle.podspec */; };
+		04AF0CA8203EEFBE00A6BCBA /* SCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF0CA7203EEFBE00A6BCBA /* SCButton.swift */; };
+		04AF0CAA203EF24D00A6BCBA /* SCStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF0CA9203EF24D00A6BCBA /* SCStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,8 @@
 		048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCustomUIStyleTests.swift; sourceTree = "<group>"; };
 		048C296C203EBCCA00330952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCustomUIStyle.swift; sourceTree = "<group>"; };
-		048C297D203ED5F800330952 /* SwiftCustomUIStyle.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftCustomUIStyle.podspec; sourceTree = SOURCE_ROOT; };
+		04AF0CA7203EEFBE00A6BCBA /* SCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCButton.swift; sourceTree = "<group>"; };
+		04AF0CA9203EF24D00A6BCBA /* SCStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +91,11 @@
 		048C295E203EBCCA00330952 /* SwiftCustomUIStyle */ = {
 			isa = PBXGroup;
 			children = (
-				048C297D203ED5F800330952 /* SwiftCustomUIStyle.podspec */,
 				048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */,
 				048C2960203EBCCA00330952 /* Info.plist */,
 				048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */,
+				04AF0CA7203EEFBE00A6BCBA /* SCButton.swift */,
+				04AF0CA9203EF24D00A6BCBA /* SCStyle.swift */,
 			);
 			path = SwiftCustomUIStyle;
 			sourceTree = "<group>";
@@ -205,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048C297E203ED5F800330952 /* SwiftCustomUIStyle.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AF0CAA203EF24D00A6BCBA /* SCStyle.swift in Sources */,
 				048C2977203EBF3D00330952 /* SwiftCustomUIStyle.swift in Sources */,
+				04AF0CA8203EEFBE00A6BCBA /* SCButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +392,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftCustomUIStyle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.attractgroup.SwiftCustomUIStyle;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -411,6 +416,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftCustomUIStyle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.attractgroup.SwiftCustomUIStyle;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

@@ -7,12 +7,12 @@
 		<key>SwiftCustomUIStyle.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>13</integer>
 		</dict>
 		<key>UniversalSwiftCustomUIStyle.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>14</integer>
 		</dict>
 	</dict>
 </dict>
