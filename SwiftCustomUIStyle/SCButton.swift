@@ -16,7 +16,7 @@ private extension SCButton{
 }
 
 @IBDesignable
-class SCButton: UIButton {
+open class SCButton: UIButton {
     var styleNumber:Int = 0
     var style: SCButtonDetails?
     
