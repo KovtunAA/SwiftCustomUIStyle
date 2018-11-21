@@ -2,42 +2,39 @@
 //  SCStyle.swift
 //  SwiftCustomUIStyle
 //
-//  Created by Mac on 2/22/18.
+//  Created by  Marta Sladkih on 11/21/18.
 //  Copyright © 2018 attractgroup. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-//open protocol StyleConstructor{
-//    func setButtonStyle(name: String, customDetails: SCButtonDetails)
+//protocol SCStyleDelegate: class {
+//    func changeStyle(_ index: Int)
 //}
 
-private extension SCStyle{
-    
-}
-
-public struct SCButtonDetails{
-    var fontName: String?
-    var fontSize: CGFloat?
-    var fontColor: UIColor?
-}
-
-//extension SCStyle: StyleConstructor{
-//
+//@IBDesignable class SCStyle: UIView {
+//    weak var delegate: SCStyleDelegate?
+//    
+//    @IBInspectable var style: Int = -1 {
+//        didSet {
+//            self.changeStyle()
+//        }
+//    }
+//    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        self.changeStyle()
+//    }
+//    
+//    func changeStyle() {
+//        self.delegate?.changeStyle(self.style)
+//        self.changeSettings()
+//    }
+//    
+//    func changeSettings(){
+//        self.backgroundColor = ButtonStyle.backgroundColor
+//        self.layer.cornerRadius = ButtonStyle.cornerRadius
+//        self.layer.borderWidth = ButtonStyle.borderWidth
+//        self.layer.borderColor = ButtonStyle.borderColor?.cgColor
+//    }
 //}
-
-open class SCStyle: NSObject {
-    var buttonStyles = [String : SCButtonDetails]()
-    
-    open static let shared = SCStyle()
-    open var buttonDetails: [String : (fontName: String, fontSize: CGFloat, fontColor: UIColor)]?{
-        didSet{
-            for styleName in Array(buttonDetails!.keys) {
-                if let details: (fontName: String, fontSize: CGFloat, fontColor: UIColor) = buttonDetails![styleName]{
-                    let buttonDetail = SCButtonDetails(fontName: details.fontName, fontSize: details.fontSize, fontColor: details.fontColor)
-                    buttonStyles[styleName] = buttonDetail
-                }
-            }
-        }
-    }
-}

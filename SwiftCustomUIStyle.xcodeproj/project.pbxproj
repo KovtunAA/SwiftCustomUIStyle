@@ -24,9 +24,8 @@
 		048C2966203EBCCA00330952 /* SwiftCustomUIStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C295C203EBCCA00330952 /* SwiftCustomUIStyle.framework */; };
 		048C296B203EBCCA00330952 /* SwiftCustomUIStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */; };
 		048C296D203EBCCA00330952 /* SwiftCustomUIStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		048C2977203EBF3D00330952 /* SwiftCustomUIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */; };
 		04AF0CA8203EEFBE00A6BCBA /* SCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF0CA7203EEFBE00A6BCBA /* SCButton.swift */; };
-		04AF0CAA203EF24D00A6BCBA /* SCStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF0CA9203EF24D00A6BCBA /* SCStyle.swift */; };
+		C64AC89021A5619D0096628D /* SCStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64AC88F21A5619D0096628D /* SCStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +45,8 @@
 		048C2965203EBCCA00330952 /* SwiftCustomUIStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCustomUIStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCustomUIStyleTests.swift; sourceTree = "<group>"; };
 		048C296C203EBCCA00330952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCustomUIStyle.swift; sourceTree = "<group>"; };
 		04AF0CA7203EEFBE00A6BCBA /* SCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCButton.swift; sourceTree = "<group>"; };
-		04AF0CA9203EF24D00A6BCBA /* SCStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStyle.swift; sourceTree = "<group>"; };
+		C64AC88F21A5619D0096628D /* SCStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +91,8 @@
 			children = (
 				048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */,
 				048C2960203EBCCA00330952 /* Info.plist */,
-				048C2976203EBF3D00330952 /* SwiftCustomUIStyle.swift */,
 				04AF0CA7203EEFBE00A6BCBA /* SCButton.swift */,
-				04AF0CA9203EF24D00A6BCBA /* SCStyle.swift */,
+				C64AC88F21A5619D0096628D /* SCStyle.swift */,
 			);
 			path = SwiftCustomUIStyle;
 			sourceTree = "<group>";
@@ -241,9 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AF0CAA203EF24D00A6BCBA /* SCStyle.swift in Sources */,
-				048C2977203EBF3D00330952 /* SwiftCustomUIStyle.swift in Sources */,
 				04AF0CA8203EEFBE00A6BCBA /* SCButton.swift in Sources */,
+				C64AC89021A5619D0096628D /* SCStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
