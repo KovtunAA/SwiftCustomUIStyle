@@ -21,11 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		048C2966203EBCCA00330952 /* SwiftCustomUIStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C295C203EBCCA00330952 /* SwiftCustomUIStyle.framework */; };
 		048C296B203EBCCA00330952 /* SwiftCustomUIStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C296A203EBCCA00330952 /* SwiftCustomUIStyleTests.swift */; };
 		048C296D203EBCCA00330952 /* SwiftCustomUIStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 048C295F203EBCCA00330952 /* SwiftCustomUIStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04AF0CA8203EEFBE00A6BCBA /* SCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF0CA7203EEFBE00A6BCBA /* SCButton.swift */; };
 		C64AC89021A5619D0096628D /* SCStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64AC88F21A5619D0096628D /* SCStyle.swift */; };
+		C6E9B40921A5AB9500AF7271 /* SwiftCustomUIStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C295C203EBCCA00330952 /* SwiftCustomUIStyle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E9B40921A5AB9500AF7271 /* SwiftCustomUIStyle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048C2966203EBCCA00330952 /* SwiftCustomUIStyle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
