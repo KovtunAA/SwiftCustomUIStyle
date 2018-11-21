@@ -12,7 +12,7 @@ protocol SCStyleDelegate: class {
     func changeStyle(_ index: Int)
 }
 
-struct ButtonStyle {
+open struct ButtonStyle {
     static var textColor: UIColor?
     static var textFont = UIFont.systemFont(ofSize: 15)
     static var backgroundColor: UIColor?
@@ -43,7 +43,7 @@ struct ButtonStyle {
     }
 }
 
-@IBDesignable class SCButton: UIButton {
+@IBDesignable open class SCButton: UIButton {
     @IBInspectable var buttonStyle: Int = -1 {
         didSet {
             self.changeButtonStyle()
